@@ -1,0 +1,27 @@
+// ==========================================================================
+// Form Elements
+// ==========================================================================
+
+.form {
+    margin-top: 55px;
+    
+    @include e(label) {
+        @include m(hidden) {
+            @extend .srt;
+        }
+    }
+    
+    @include mq(medium) {
+        margin-top: 20px;
+    }
+    
+    @include e(input) {
+        font-weight: $font-weight--bold;
+        margin-left: 15px;
+        border: none;
+        border-bottom: em(7px) solid $java;
+        width: 90%;
+        padding: em(13px);
+    }
+}
+

@@ -1,0 +1,112 @@
+// ==========================================================================
+// Grid Columns
+// ==========================================================================
+
+// Generates grid columns
+
+.grid__col {
+	
+	@include mq(medium) {
+		@include g-columns;
+		// @include grid-flex($t-align: center);
+	}
+	@include mq(small) {
+		@include g-margin(-9px);		
+	}
+}
+
+// Column styles
+
+[class^="grid__col"] {
+	margin-top: em(30px);
+	margin-bottom: em(30px); }
+
+div.theme__colors:not([class^="btn--"]):nth-of-type(1n+1) {
+	font-weight: $font-weight--bold;
+	@include mq(medium) {
+		margin-left: 5px;
+	}
+	margin-left: -5px;
+}
+
+div.theme__colors:not([class^="btn--"]):only-of-type:not(.grid__col--7) {
+	margin-top: 40px;	
+	@include mq(medium) {
+		margin-top: 10px;
+	}
+}
+
+// Grid display
+
+.container {
+	.grid__row [class*="grid__col"] {
+  		font-weight: $font-weight--thin;
+		margin-bottom: em(16px);
+		padding: 2%;
+		border-radius: $br;
+		@include mq(medium) {
+			padding: .75%;
+		}
+	}
+}
+
+.grid__row {
+	@extend %clearfix;
+	&:last-of-type {
+		margin-bottom: 20px;
+		@include mq(medium) {
+			margin-bottom: 90px;
+		}
+	}
+	@include mq(medium) { 
+		@include flexbox(row) {
+			&:last-child {
+				justify-content: center;
+			}
+			& {
+				justify-content: space-between;
+			}
+			&:not(:nth-child(3)):not(:nth-child(2)) {
+				text-align: center;
+			}
+		}
+	}
+}
+
+
+// Grid display background colors
+
+$b-grid: (
+	grid__col--12 : $indiglo,
+	grid__col--8  : $coral,
+	grid__col--7  : $pink,
+	grid__col--6  : $cerulean,
+	grid__col--4  : $surf,
+	grid__col--5  : $mediumseagreen,
+	grid__col--3  : $medium-purple1
+);
+
+// Generate grid display classes
+
+@each $value, $color in $b-grid {
+	.container .#{$value} {
+		background-color: $color;
+	}
+}
+
+// overridden colors
+
+.grid {
+	@include e(row) {
+		&:first-of-type > .grid__col--3,
+		&:nth-child(2) > .grid__col--12,
+		&:nth-child(3) > .grid__col--8,
+		&:nth-child(3) > .grid__col--4,
+		&:nth-child(5) > .grid__col--6,
+		&:nth-child(7) > .grid__col--12,
+		{
+			background-color: $white;
+		}
+		
+	}
+}

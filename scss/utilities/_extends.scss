@@ -1,0 +1,113 @@
+// ==========================================================================
+// Placeholders
+// ==========================================================================
+
+// Nav Items
+
+%nav-item-vert {
+    @include mq(medium) {
+        .grid__row,
+        .nav {
+            @include flexbox(column);
+        }
+        .grid__row {
+            padding-top: 2em;
+        }
+    }
+}
+
+%nav-item-link {
+    font-weight: $font-weight--light;
+    text-align: center;
+    font-size: em(18px);
+    display: block;
+    padding: 7px 7px 0;
+    @include mq(small) {
+        padding: em(12px, 18px);
+        margin-bottom: 12px;
+    } 
+}
+
+%nav-item-on {
+    color: $white;
+    border-radius: $br;
+    background-color: $aquamarine;
+}
+
+// Images
+
+%position-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+// Links
+
+%menu-link {
+    padding: em(2px);
+    text-shadow: 0 1px $color-shadow;
+    font-size: em(16px);
+  }
+
+%link {
+    color: $indiglo;
+    text-decoration: none;
+    font-weight: $font-weight--bold;
+}
+
+
+
+// Headlines
+
+%hdln-prim {
+    @include text(2rem, 44px/42px, $font-weight--bold, $java);
+    margin-top: 0;
+}
+%hdln-sec {
+    color: $color-shadow;
+    font-size: 19px;
+    font-weight: $font-weight--thin;
+}
+
+// Clearfix
+
+%clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+// Center alignment
+
+%center-align {
+    text-align: center;
+}
+
+.srt {
+    clip-path: inset(100%);
+    overflow: hidden; 
+}
+
+// Buttons
+
+%btn {
+    padding: 11px 30px;
+    border: 0;
+    border-radius: $br;
+    color: $white;
+    text-transform: uppercase;
+    font-size: em(14px);
+    font-weight: $font-weight--bold;
+    display: block;
+    &:hover {
+        opacity: .75;
+    }
+    &:active {
+        opacity: initial;
+    }
+}
+

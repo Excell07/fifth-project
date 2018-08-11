@@ -1,0 +1,39 @@
+// ==========================================================================
+// Images
+// ==========================================================================
+
+.img {
+    @include m(logo) {
+       @extend %position-img;
+       margin-top: em(12px);
+       margin-bottom: em(-22px);
+    }
+    @include m(frame) {
+        padding: 3%;
+        margin-top: 17px;
+        margin-bottom: -12px;
+        border: 1px solid rgba(153, 153, 153, .5);
+        @extend %position-img;
+        @include mq(medium) {
+        margin-left: 40px;
+        margin-top: -25px;            
+        }
+    }
+    @include m(avatar) {
+        padding-top: em(20px);
+        padding-bottom: em(20px);
+        padding-bottom: -30px;
+        margin-bottom: -30px;
+        @include mq(medium) {
+            &:last-child {
+                max-width: 45%;                
+                margin-top: -30px;
+            }
+        }
+        @include mq(small) {
+            margin-bottom: -30px;
+        }
+        @extend %position-img;
+    }
+}
+

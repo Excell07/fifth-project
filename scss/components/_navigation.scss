@@ -1,0 +1,43 @@
+// ==========================================================================
+// Nav
+// ==========================================================================
+
+.nav {
+    margin-top: em(20px);
+    margin-bottom: em(30px);
+
+    @include e(item) {
+        @extend %nav-item-vert;
+
+        a {
+          @extend %nav-item-link;
+          text-decoration: none;
+          color: $color-primary;
+          &:hover {
+              @extend %nav-item-on;
+          }
+        }
+        
+        &:first-child a {
+            color: $white;
+            background-color: $java;
+            border-radius: $br;         
+        }
+    }
+    
+    
+    @include mq(medium) {
+        @include flexbox(row) {
+            justify-content: center; 
+        }
+        @include e(item) {
+            margin-left: 32px;
+            & > a {
+                padding-bottom: 4px;
+            }
+        }
+        & {
+            margin-left: em(-100px);
+        }   
+    }
+}
