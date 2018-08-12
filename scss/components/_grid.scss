@@ -8,7 +8,6 @@
 	
 	@include mq(medium) {
 		@include g-columns;
-		// @include grid-flex($t-align: center);
 	}
 	@include mq(small) {
 		@include g-margin(-9px);		
