@@ -1,0 +1,49 @@
+// ==========================================================================
+// Buttons
+// ==========================================================================
+ 
+.btn {
+    @include ui-colors($ui-colors);
+    @include mq(small) {
+        &--default {
+            margin-top: 30px;
+        }
+    }
+}
+
+[class^="btn--"] {
+    @extend %btn;
+    @extend %center-align;
+    margin-bottom: em(20px, 14px);
+    width: 100%;
+    @include mq(medium) {
+        &:not([value="Login"]) {
+            width: 155px;            
+        }
+        &[value="Login"] {
+            margin-top: 25px;       
+        }
+    }
+    & {
+        font-size: em(15px);
+    }
+}
+
+@include mq(medium) {
+    .grid__row:nth-child(7) > .grid__col--12 {
+        @include flexbox(row);
+        justify-content: space-around;
+        flex: 1;
+
+        & > .theme__colors {
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+    }
+    [class^="btn--"]:not(.btn--warning):not([value="Login"]) {
+        flex-grow: 1;
+    }
+    .btn--warning {
+        flex-grow: 8;
+    }
+}

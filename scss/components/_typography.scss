@@ -1,0 +1,47 @@
+/* Web Fonts -------------------- */
+
+.container {
+    color: $color-text-base;
+    font-size: $base__font-size;
+    margin: 0;
+    font-family: $font-family--primary;
+    line-height: 1.5;
+    max-width: 88%;
+    margin: auto;
+    & .card > p {
+        font-size: em(18px);
+    }
+}
+
+
+// Text
+
+.link {    
+    @extend %link;
+}
+
+.headline--primary {
+    @extend %hdln-prim;
+    margin-left: 20px;
+    margin-bottom: em(20px);
+}
+
+.headline--secondary {
+    @include mq(medium) {
+        &:nth-child(1n+2):not([id="grid"]) {
+            margin-left: -20px;
+        }
+    }      
+    @extend %hdln-sec;
+}
+
+.blockquote {
+    border-left: 10px solid $java;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-left: 22px;
+    margin-left: 22px;
+    margin-bottom: -8px;
+    font-style: italic;
+    @include text(em(25.74px), 1.3, $font-weight--thin, #777);
+}
