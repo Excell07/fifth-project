@@ -261,13 +261,6 @@ ul {
   padding: 0;
   list-style-type: none; }
 
-p {
-  color: #797e83;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.5em; }
-
 /* Web Fonts -------------------- */
 .container {
   color: #656a6e;
